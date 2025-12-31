@@ -10,9 +10,16 @@ Content-Type: application/json
   "starts_at": "2026-01-01T10:00:00Z",
   "ends_at": "2026-01-10T18:00:00Z",
   "owner_name": "Edd Silva",
-  "owner_email": "edd.silva@example.com"
+  "owner_email": "edd.silva@example.com",
+  "emails_to_invite": [
+    "edd.silva@example.com", 
+    "may.silva@example.com"
+    ]
 }
 
-
+###
+GET {{baseUrl}}/trips/d0ed5dc3-fff8-4140-b347-4642623a4669/confirm
+Content-Type: application/json
+# Authorization: Bearer
 ###
 # GET {{baseUrl}}/auth/test
