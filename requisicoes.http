@@ -22,4 +22,6 @@ GET {{baseUrl}}/trips/d0ed5dc3-fff8-4140-b347-4642623a4669/confirm
 Content-Type: application/json
 # Authorization: Bearer
 ###
-# GET {{baseUrl}}/auth/test
+
+GET {{baseUrl}}/participants/0c3f299b-a66a-4d09-8db9-41cefcc3b5a4/confirm
+Content-Type: application/json
