@@ -24,16 +24,34 @@ export async function getActivities(app: FastifyInstance) {
       where: {
         id: tripId,
       },
-      include: {
-        activities: true,
-      } 
+      include: { 
+        activities: {// include: { activities: true,} 
+          orderBy: { 
+            occours_at: 'asc' 
+          }
+        }
+      }
     })
 
     if(!trip){
       return new Error('Trip not found'  );
     }
 
-    return {activities: trip.activities };
+    const differenceInDaysBetweenTripStartAndNow   = dayjs(trip.ends_at).diff(trip.starts_at, 'day');
+
+    const activities = Array.from({length: differenceInDaysBetweenTripStartAndNow + 1}).map((_, index) => {
+      const  date = dayjs(trip.starts_at).add(index, 'day').format('YYYY-MM-DD');
+
+      return {
+        date: date.toString(),
+        activities: trip.activities.filter(activity => {
+          return dayjs(activity.occours_at).isSame(date, 'day')
+        })
+      }
+    })
+    
+
+    return {activities };
   },
   )
 }
