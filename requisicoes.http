@@ -51,4 +51,23 @@ Content-Type: application/json
 {
   "title": "Reserva do Airbnb",
   "url": "https://www.airbnb.com/rooms/12345678"
-}
+} 
+
+###
+GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/links
+Content-Type: application/json
+
+###
+GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/participants
+Content-Type: application/json
+
+
+###
+POST {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/invites 
+Content-Type: application/json
+# Authorization: Bearer {{token}}
+# Idempotency-Key: acsb1ad-50d5-4a0f-b0d1-61a64a0fee28
+
+{
+  "email": "dudu2@gmail.com"
+} 
