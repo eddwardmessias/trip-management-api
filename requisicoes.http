@@ -1,5 +1,6 @@
 @baseUrl = http://localhost:3333
 
+### CREATE TRIP
 POST {{baseUrl}}/trips
 Content-Type: application/json
 # Authorization: Bearer {{token}}
@@ -17,17 +18,17 @@ Content-Type: application/json
     ]
 }
 
-###
+### CONFIRM TRIP
 GET {{baseUrl}}/trips/d0ed5dc3-fff8-4140-b347-4642623a4669/confirm
 Content-Type: application/json
 # Authorization: Bearer
-###
 
+### CONFIRM PARTICIPANT
 GET {{baseUrl}}/participants/0c3f299b-a66a-4d09-8db9-41cefcc3b5a4/confirm
 Content-Type: application/json
 
 
-###
+### CREATE ACTIVITY
 POST {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/activities
 Content-Type: application/json
 # Authorization: Bearer {{token}}
@@ -38,11 +39,11 @@ Content-Type: application/json
   "occours_at": "2026-01-06T10:00:00Z"
 }
 
-###
+### GET ACTIVITIES
 GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/activities
 Content-Type: application/json
 
-###
+### CREATE LINK
 POST {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/links
 Content-Type: application/json
 # Authorization: Bearer {{token}}
@@ -53,16 +54,16 @@ Content-Type: application/json
   "url": "https://www.airbnb.com/rooms/12345678"
 } 
 
-###
+### GET LINKS
 GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/links
 Content-Type: application/json
 
-###
+### GET PARTICIPANTS
 GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/participants
 Content-Type: application/json
 
 
-###
+### CREATE INVITE PARTICIPANT
 POST {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659/invites 
 Content-Type: application/json
 # Authorization: Bearer {{token}}
@@ -71,3 +72,24 @@ Content-Type: application/json
 {
   "email": "dudu2@gmail.com"
 } 
+
+### UPDATE TRIP
+PUT {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659
+Content-Type: application/json
+# Authorization: Bearer {{token}}
+# Idempotency-Key: acsb1ad-50d5-4a0f-b0d1-61a64a0fee28
+
+{
+  "destination": "Caruaru",
+  "starts_at": "2026-01-17T10:00:00Z",
+  "ends_at": "2026-01-18T12:00:00Z"
+}
+
+
+### GET TRIP DETAILS
+GET {{baseUrl}}/trips/c1127418-7700-466b-a1d6-d7f9e39bf659
+Content-Type: application/json
+
+### GET PARTICIPANTS
+GET {{baseUrl}}/participants/7fd70494-c590-40ef-b883-eac338484463
+Content-Type: application/json
