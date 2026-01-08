@@ -176,18 +176,7 @@ Emails são enviados em momentos estratégicos:
 2. **Confirmação da viagem** → Emails em paralelo para todos os convidados
 3. **Novo convite** → Email individual ao participante adicionado
 
-Os emails utilizam templates HTML responsivos e incluem todas as informações relevantes (destino, datas formatadas, links de ação).
-
-## Possíveis Evoluções
-
-- Implementação de autenticação JWT para controle de acesso
-- Sistema de permissões (somente organizador pode modificar viagem)
-- Upload de documentos e imagens
-- Notificações em tempo real via WebSocket
-- Sincronização com calendários externos (Google Calendar, Outlook)
-- Estimativa de custos compartilhados entre participantes
-- Chat entre membros da viagem
-- Versão mobile (React Native / Flutter)
+Os emails utilizam templates HTML e incluem todas as informações relevantes (destino, datas formatadas, links de ação).
 
 ## Estrutura do Projeto
 
